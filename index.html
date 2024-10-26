@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theo dõi phím nhấn</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #displayKey {
+            font-size: 24px;
+            color: #333;
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            font-size: 18px;
+            padding: 10px;
+            width: 80%;
+            max-width: 300px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Nhấn phím trên bàn phím điện thoại</h1>
+    <input type="text" id="inputBox" placeholder="Nhập vào đây" />
+    <div id="displayKey">Phím vừa nhập: <span id="keyPressed">None</span></div>
+
+    <script>
+        const inputBox = document.getElementById('inputBox');
+        const keyDisplay = document.getElementById('keyPressed');
+
+        inputBox.addEventListener('keyup', function(event) {
+            // Hiển thị phím người dùng vừa nhập
+            keyDisplay.textContent = event.key;
+        });
+    </script>
+
+</body>
+</html>
